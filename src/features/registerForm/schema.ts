@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { isUniqueSignInName, isUniqueSignInEmail } from '@/shared/helpers'
+import { isUniqueSignInName, isUniqueSignInEmail } from '@/shared/utils'
 
-export const schema = z
+export const registerSchema = z
 	.object({
 		username: z
 			.string()
@@ -28,4 +28,4 @@ export const schema = z
 		message: 'Password mismatch'
 	})
 
-export type Schema = z.infer<typeof schema>
+export type RegisterSchema = z.infer<typeof registerSchema>

@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 import { Navigate } from 'react-router-dom'
 
-import { checkUserLogIn } from '@/shared/helpers'
+import { checkUserLogIn } from '@/shared/utils'
 
 type Props = {
 	readonly Component: ComponentType

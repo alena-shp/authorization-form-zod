@@ -1,45 +1,17 @@
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router'
-
-import { zodResolver } from '@hookform/resolvers/zod'
 import { Field } from '@/entities/field'
 import { ConditionsField } from '@/entities/conditionField'
-import { signIn } from '@/shared/helpers'
-
-import { type Schema, schema } from './schema'
+import { useFormControl } from '@/shared/hooks'
+import { EFormType } from '@/shared/types'
 
 import $ from './styles.module.scss'
 
 export const RegisterForm = () => {
-	const navigate = useNavigate()
-
-	const {
-		register,
-		handleSubmit,
-		reset,
-		setFocus,
-		formState: { isValid, errors }
-	} = useForm<Schema>({ resolver: zodResolver(schema), mode: 'onTouched' })
-
-	const onSubmit = (data: Schema) => {
-		const { username, password, email } = data
-
-		const userData = { name: username, password, email }
-
-		signIn(userData)
-		reset()
-		navigate('/')
-	}
-
-	useEffect(() => {
-		setFocus('username')
-	}, [setFocus])
+	const { isValid, errors, register, handleSubmit } = useFormControl({ formType: EFormType.signIn })
 
 	return (
 		<form
 			className={$.form}
-			onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit}
 		>
 			<Field
 				type="text"
