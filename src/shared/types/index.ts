@@ -1,3 +1,5 @@
+export type TField = 'username' | 'email' | 'password' | 'confirmPassword'
+
 export type TUserData = Readonly<{
 	name: string
 	password: string
