@@ -2,14 +2,14 @@ import { Field } from '@/entities/field'
 import { useFormControl } from '@/shared/hooks'
 import { EFormType } from '@/shared/types'
 
-import $ from './styles.module.scss'
+import $$ from '@/styles.module.scss'
 
 export const LoginForm = () => {
 	const { isValid, errors, register, handleSubmit } = useFormControl({ formType: EFormType.logIn })
 
 	return (
 		<form
-			className={$.form}
+			className={$$.form}
 			onSubmit={handleSubmit}
 		>
 			<Field
@@ -33,7 +33,7 @@ export const LoginForm = () => {
 			<button
 				type="submit"
 				disabled={!isValid}
-				className={$.btn}
+				className={$$.btn}
 			>
 				Submit
 			</button>

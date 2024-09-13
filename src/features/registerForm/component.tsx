@@ -3,14 +3,14 @@ import { ConditionsField } from '@/entities/conditionField'
 import { useFormControl } from '@/shared/hooks'
 import { EFormType } from '@/shared/types'
 
-import $ from './styles.module.scss'
+import $$ from '@/styles.module.scss'
 
 export const RegisterForm = () => {
 	const { isValid, errors, register, handleSubmit } = useFormControl({ formType: EFormType.signIn })
 
 	return (
 		<form
-			className={$.form}
+			className={$$.form}
 			onSubmit={handleSubmit}
 		>
 			<Field
@@ -57,7 +57,7 @@ export const RegisterForm = () => {
 			/>
 			<button
 				type="submit"
-				className={$.btn}
+				className={$$.btn}
 				disabled={!isValid}
 			>
 				Submit
