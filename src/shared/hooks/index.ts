@@ -21,13 +21,8 @@ export const useFormControl = ({ formType }: Props) => {
 		register,
 		handleSubmit,
 		reset,
-		setFocus,
 		formState: { isValid, errors }
 	} = useForm<LoginSchema & RegisterSchema>({ resolver: zodResolver(schema), mode: 'onTouched' })
-
-	useEffect(() => {
-		setFocus('username')
-	}, [setFocus])
 
 	const onSubmit = (data: LoginSchema & RegisterSchema) => {
 		const { username, password, email } = data
