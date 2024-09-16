@@ -6,7 +6,7 @@ import { logOut, removeAccount } from '@/shared/utils'
 
 import $ from './styles.module.scss'
 import $$ from '@/styles.module.scss'
-import { Loading } from '@/shared/ui/loading/component'
+import { Loading } from '@/shared/ui/loading'
 
 export const Home = () => {
 	const navigate = useNavigate()
