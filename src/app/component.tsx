@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from '@/pages/home'
 import { Login } from '@/pages/login'
 import { Register } from '@/pages/register'
-import { PrivateRoute } from '@/features/privateRoute'
-import { Layout } from '@/entities/layout'
+import { PrivateRoute } from '@/processes/auth/privateRoute'
+import { Layout } from '@/shared/ui/layout'
 
 const router = createBrowserRouter([
 	{

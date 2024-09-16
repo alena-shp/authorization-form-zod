@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { logOut, removeAccount } from '@/shared/utils'
 
 import $ from './styles.module.scss'
+import $$ from '@/styles.module.scss'
 
 export const Home = () => {
 	const navigate = useNavigate()
@@ -24,9 +25,22 @@ export const Home = () => {
 				src="https://picsum.photos/400"
 				className={$.img}
 				alt="image"
-			></img>
-			<button onClick={handleLogOut}>Log out</button>
-			<button onClick={handleRemoveAccount}>Remove account</button>
+				onLoad={() => console.log('onLoad')}
+			/>
+			<div className={$.actions}>
+				<button
+					className={$$.btn}
+					onClick={handleLogOut}
+				>
+					Log out
+				</button>
+				<button
+					className={$$.btn}
+					onClick={handleRemoveAccount}
+				>
+					Remove account
+				</button>
+			</div>
 		</div>
 	)
 }

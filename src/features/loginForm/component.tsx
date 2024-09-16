@@ -1,5 +1,5 @@
-import { Field } from '@/entities/field'
 import { useFormControl } from '@/shared/hooks'
+import { Field } from '@/shared/ui/field'
 import { EFormType } from '@/shared/types'
 
 import $$ from '@/styles.module.scss'
