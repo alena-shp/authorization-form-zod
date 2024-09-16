@@ -1,6 +1,6 @@
 import { UseFormRegisterReturn } from 'react-hook-form'
 
-import { TField } from '@/shared/types'
+import { type TField, EAriaInvalid } from '@/shared/types'
 
 import $ from './styles.module.scss'
 
@@ -29,7 +29,7 @@ export const Field = ({ type, id, label, errorMessage, placeholder, isError, reg
 				id={id}
 				className={$.input}
 				placeholder={placeholder}
-				aria-invalid={isError ? 'true' : 'false'}
+				aria-invalid={isError ? EAriaInvalid.true : EAriaInvalid.false}
 			/>
 			<span
 				role="alert"

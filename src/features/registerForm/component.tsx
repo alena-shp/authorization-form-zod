@@ -1,7 +1,9 @@
 import { Field } from '@/shared/ui/field'
 import { ConditionsField } from '@/shared/ui/conditionField'
 import { useFormControl } from '@/shared/hooks'
-import { EFormType } from '@/shared/types'
+import { EFormType, ETextType } from '@/shared/types'
+
+import { Text } from '@/shared/ui/text'
 
 import $$ from '@/styles.module.scss'
 
@@ -60,7 +62,10 @@ export const RegisterForm = () => {
 				className={$$.btn}
 				disabled={!isValid}
 			>
-				Submit
+				<Text
+					content="Submit"
+					type={ETextType.button}
+				/>
 			</button>
 		</form>
 	)

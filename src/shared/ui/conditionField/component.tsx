@@ -1,6 +1,8 @@
 import { UseFormRegisterReturn } from 'react-hook-form'
+import { ETextSize, ETextType, EAriaInvalid } from '@/shared/types'
 
 import $ from './styles.module.scss'
+import { Text } from '../text'
 
 type TProps = Readonly<{
 	id: string
@@ -18,18 +20,25 @@ export const ConditionsField = ({ id, register, isError, errorMessage }: TProps)
 					type="checkbox"
 					id={id}
 					className={$.checkbox}
-					aria-invalid={isError ? 'true' : 'false'}
+					aria-invalid={isError ? EAriaInvalid.true : EAriaInvalid.false}
 				/>
 				<label
 					htmlFor={id}
 					className={$.confirm}
 				>
-					I accept{' '}
+					<Text
+						content="I accept "
+						size={ETextSize.small}
+					/>
 					<a
 						className={$.link}
 						href="#"
 					>
-						Terms and conditions
+						<Text
+							content="Terms and conditions"
+							size={ETextSize.small}
+							type={ETextType.link}
+						/>
 					</a>
 				</label>
 			</div>

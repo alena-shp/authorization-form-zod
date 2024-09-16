@@ -1,7 +1,8 @@
 import { useFormControl } from '@/shared/hooks'
 import { Field } from '@/shared/ui/field'
-import { EFormType } from '@/shared/types'
+import { EFormType, ETextType } from '@/shared/types'
 
+import { Text } from '@/shared/ui/text'
 import $$ from '@/styles.module.scss'
 
 export const LoginForm = () => {
@@ -35,7 +36,10 @@ export const LoginForm = () => {
 				disabled={!isValid}
 				className={$$.btn}
 			>
-				Submit
+				<Text
+					content="Submit"
+					type={ETextType.button}
+				/>
 			</button>
 		</form>
 	)

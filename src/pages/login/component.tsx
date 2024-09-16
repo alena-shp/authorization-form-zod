@@ -1,13 +1,31 @@
 import { Link } from 'react-router-dom'
 import { LoginForm } from '@/features/loginForm'
 
+import { ETextSize, ETextType } from '@/shared/types'
+import { Text } from '@/shared/ui/text'
+
+import $$ from '@/styles.module.scss'
+
 export const Login = () => {
 	return (
-		<div>
-			<h1>Login</h1>
+		<div className={$$.block}>
+			<Text
+				content="Login"
+				size={ETextSize.large}
+			/>
 			<LoginForm />
-			<p>You dont't have an account?</p>
-			<Link to="/register">Sign In</Link>
+			<div className={$$.footer}>
+				<Text content="You don't have an account?" />
+				<Link
+					to="/register"
+					className={$$.link}
+				>
+					<Text
+						content="Sign In"
+						type={ETextType.link}
+					/>
+				</Link>
+			</div>
 		</div>
 	)
 }

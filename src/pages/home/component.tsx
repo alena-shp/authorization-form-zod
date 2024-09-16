@@ -2,11 +2,13 @@ import { useState } from 'react'
 import classNames from 'classnames'
 import { useNavigate } from 'react-router'
 
+import { ETextSize, ETextType } from '@/shared/types'
+import { Loading } from '@/shared/ui/loading'
+import { Text } from '@/shared/ui/text'
 import { logOut, removeAccount } from '@/shared/utils'
 
 import $ from './styles.module.scss'
 import $$ from '@/styles.module.scss'
-import { Loading } from '@/shared/ui/loading'
 
 export const Home = () => {
 	const navigate = useNavigate()
@@ -28,8 +30,11 @@ export const Home = () => {
 	}
 
 	return (
-		<div className={$.home}>
-			Home
+		<div className={$$.block}>
+			<Text
+				content="Home"
+				size={ETextSize.large}
+			/>
 			<img
 				src="https://picsum.photos/400"
 				className={classNames($.img, {
@@ -48,13 +53,19 @@ export const Home = () => {
 					className={$$.btn}
 					onClick={handleLogOut}
 				>
-					Log out
+					<Text
+						content="Log out"
+						type={ETextType.button}
+					/>
 				</button>
 				<button
 					className={$$.btn}
 					onClick={handleRemoveAccount}
 				>
-					Remove account
+					<Text
+						content="Remove account"
+						type={ETextType.button}
+					/>
 				</button>
 			</div>
 		</div>
