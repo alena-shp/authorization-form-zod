@@ -1,4 +1,4 @@
-import { Field } from '@/entities/field'
+import { Field } from '@/shared/ui/field'
 import { ConditionsField } from '@/shared/ui/conditionField'
 import { useFormControl } from '@/shared/hooks'
 import { EFormType } from '@/shared/types'
